@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEL — Edição Especial de Aniversário</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFDF8;
+    --ink:#1B1416;
+    --fucsia:#E0316B;
+    --rosa:#FCE7EE;
+    --ouro:#E8A83B;
+    --cinza:#8A8085;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  .serif{font-family:'Bodoni Moda',serif}
+
+  /* ---------- CAPA ---------- */
+  .capa{
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:28px 20px 60px;
+    position:relative;
+    background:linear-gradient(180deg,var(--rosa) 0%, var(--paper) 78%);
+  }
+  .capa-topo{
+    width:100%;max-width:900px;
+    display:flex;justify-content:space-between;align-items:baseline;
+    text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:600;
+    border-bottom:2px solid var(--ink);padding-bottom:10px;
+  }
+  .masthead{
+    font-family:'Bodoni Moda',serif;
+    font-weight:900;
+    font-size:clamp(96px,26vw,260px);
+    line-height:.9;
+    letter-spacing:.02em;
+    margin-top:24px;
+    color:var(--ink);
+  }
+  .masthead .estrela{color:var(--fucsia)}
+  .capa-sub{
+    text-transform:uppercase;letter-spacing:.3em;font-size:clamp(10px,2.6vw,14px);
+    font-weight:600;color:var(--fucsia);margin-top:6px;text-align:center;
+  }
+  .capa-foto{
+    margin-top:34px;
+    width:min(340px,78vw);
+    position:relative;
+  }
+  .capa-foto img{
+    width:100%;
+    border:10px solid #fff;
+    box-shadow:0 22px 60px rgba(27,20,22,.22);
+    transform:rotate(-2deg);
+  }
+  .selo{
+    position:absolute;right:-26px;top:-26px;
+    width:96px;height:96px;border-radius:50%;
+    background:var(--ouro);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Bodoni Moda',serif;font-weight:900;font-size:30px;
+    transform:rotate(10deg);
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+  }
+  .selo small{font-size:10px;font-family:'Archivo';letter-spacing:.12em;font-weight:700;display:block;text-align:center}
+  .chamadas{
+    margin-top:36px;max-width:640px;text-align:center;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .chamada{
+    font-family:'Bodoni Moda',serif;font-style:italic;
+    font-size:clamp(18px,4.4vw,24px);
+  }
+  .chamada b{font-style:normal;color:var(--fucsia)}
+  .seta-baixo{
+    margin-top:44px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--cinza);animation:flutua 2.4s ease-in-out infinite;
+    text-decoration:none;
+  }
+  @keyframes flutua{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+  /* ---------- ESTRUTURA GERAL ---------- */
+  .secao{max-width:900px;margin:0 auto;padding:80px 22px}
+  .eyebrow{
+    display:inline-block;
+    text-transform:uppercase;letter-spacing:.26em;font-size:11px;font-weight:700;
+    color:var(--fucsia);
+    border:1.5px solid var(--fucsia);
+    padding:6px 14px;border-radius:999px;
+    margin-bottom:18px;
+  }
+  h2{
+    font-family:'Bodoni Moda',serif;font-weight:900;
+    font-size:clamp(34px,7.4vw,60px);line-height:1.05;
+    margin-bottom:22px;
+  }
+  h2 em{font-style:italic;color:var(--fucsia)}
+  .texto{max-width:620px;font-size:17.5px}
+  .texto p+p{margin-top:16px}
+
+  .foto-card{
+    background:#fff;padding:12px 12px 40px;
+    box-shadow:0 14px 40px rgba(27,20,22,.14);
+    display:inline-block;
+  }
+  .foto-card figcaption{
+    font-family:'Bodoni Moda',serif;font-style:italic;
+    font-size:15px;text-align:center;margin-top:12px;color:var(--cinza);
+  }
+
+  /* capítulo com foto ao lado */
+  .cap{display:grid;grid-template-columns:1fr;gap:36px;align-items:center}
+  @media(min-width:760px){
+    .cap{grid-template-columns:1fr 1fr;gap:56px}
+    .cap.invertido .cap-foto{order:-1}
+  }
+  .cap-foto{justify-self:center}
+  .cap-foto .foto-card{max-width:380px;transform:rotate(1.6deg)}
+  .cap.invertido .cap-foto .foto-card{transform:rotate(-1.6deg)}
+
+  .num-ano{
+    font-family:'Bodoni Moda',serif;font-weight:900;
+    font-size:clamp(54px,10vw,84px);color:var(--rosa);
+    -webkit-text-stroke:2px var(--fucsia);
+    line-height:1;margin-bottom:4px;
+  }
+
+  /* duas fotos lado a lado (Tóquio) */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+  .duo .foto-card{padding-bottom:34px}
+  .duo .foto-card:first-child{transform:rotate(-2deg)}
+  .duo .foto-card:last-child{transform:rotate(2deg) translateY(16px)}
+
+  /* galeria família */
+  .mosaico{
+    columns:2;column-gap:16px;margin-top:36px;
+  }
+  @media(min-width:700px){.mosaico{columns:3}}
+  .mosaico .foto-card{margin:0 0 16px;width:100%;padding-bottom:14px}
+  .mosaico img{width:100%}
+
+  /* faixa citação */
+  .faixa{
+    background:var(--ink);color:var(--paper);
+    padding:90px 22px;text-align:center;
+  }
+  .faixa blockquote{
+    font-family:'Bodoni Moda',serif;font-style:italic;
+    font-size:clamp(26px,6vw,44px);line-height:1.25;
+    max-width:760px;margin:0 auto;
+  }
+  .faixa blockquote b{color:var(--ouro);font-style:normal}
+  .faixa cite{
+    display:block;margin-top:26px;font-style:normal;
+    font-family:'Archivo';text-transform:uppercase;letter-spacing:.26em;
+    font-size:11px;color:var(--fucsia);font-weight:700;
+  }
+
+  /* ---------- MÚSICA ---------- */
+  .musica{background:var(--rosa)}
+  .musica .secao{text-align:center}
+  .disco{
+    width:120px;height:120px;border-radius:50%;
+    background:radial-gradient(circle at center, var(--fucsia) 0 14%, var(--ink) 15% 100%);
+    margin:0 auto 26px;position:relative;
+    animation:gira 5s linear infinite;
+    box-shadow:0 12px 30px rgba(224,49,107,.35);
+  }
+  .disco::after{
+    content:'';position:absolute;inset:26px;border-radius:50%;
+    border:1px dashed rgba(255,255,255,.35);
+  }
+  @keyframes gira{to{transform:rotate(360deg)}}
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--fucsia);color:#fff;border:none;cursor:pointer;
+    font-family:'Archivo';font-weight:700;font-size:16px;
+    text-transform:uppercase;letter-spacing:.14em;
+    padding:18px 34px;border-radius:999px;
+    box-shadow:0 12px 28px rgba(224,49,107,.4);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 36px rgba(224,49,107,.5)}
+  .player-wrap{max-width:720px;margin:34px auto 0;display:none}
+  .player-wrap.ativo{display:block}
+  .player{
+    position:relative;width:100%;padding-top:56.25%;
+    border-radius:16px;overflow:hidden;
+    box-shadow:0 20px 50px rgba(27,20,22,.25);
+  }
+  .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* ---------- PRESENTE ---------- */
+  .presente{background:linear-gradient(180deg,var(--paper), var(--rosa) 120%)}
+  .presente .secao{text-align:center;padding-bottom:120px}
+  .caixa{
+    margin:40px auto 0;cursor:pointer;border:none;background:none;
+    font-size:110px;line-height:1;
+    animation:balanca 1.6s ease-in-out infinite;
+    transition:transform .2s ease;
+  }
+  .caixa:hover{transform:scale(1.08)}
+  @keyframes balanca{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+  .dica{margin-top:14px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--cinza);font-weight:600}
+
+  .revelacao{display:none;margin-top:24px}
+  .revelacao.ativo{display:block;animation:surge .8s cubic-bezier(.2,.9,.3,1.2)}
+  @keyframes surge{from{opacity:0;transform:translateY(40px) scale(.94)}to{opacity:1;transform:none}}
+  .cartao{
+    max-width:620px;margin:0 auto;background:#fff;
+    border-radius:22px;padding:46px 34px;
+    box-shadow:0 30px 70px rgba(224,49,107,.22);
+    border-top:8px solid var(--fucsia);
+    text-align:center;
+  }
+  .cartao .tag{
+    text-transform:uppercase;letter-spacing:.26em;font-size:11px;font-weight:700;color:var(--ouro);
+  }
+  .cartao h3{
+    font-family:'Bodoni Moda',serif;font-weight:900;
+    font-size:clamp(28px,6vw,42px);line-height:1.1;margin:14px 0 18px;
+  }
+  .cartao p{max-width:460px;margin:0 auto 12px}
+  .trilogia{
+    display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:24px 0;
+  }
+  .trilogia span{
+    background:var(--rosa);color:var(--fucsia);font-weight:700;font-size:13px;
+    padding:8px 16px;border-radius:999px;letter-spacing:.06em;
+  }
+  .cartao a.btn{margin-top:10px;text-decoration:none}
+
+  /* confete */
+  .confete{
+    position:fixed;top:-14px;width:10px;height:16px;z-index:99;
+    animation:cai linear forwards;pointer-events:none;
+  }
+  @keyframes cai{to{transform:translateY(110vh) rotate(720deg);opacity:.9}}
+
+  footer{
+    text-align:center;padding:50px 20px 70px;
+    font-family:'Bodoni Moda',serif;font-style:italic;font-size:18px;color:var(--cinza);
+  }
+  footer b{color:var(--fucsia);font-style:normal}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ CAPA ============ -->
+<header class="capa">
+  <div class="capa-topo">
+    <span>Edição especial</span>
+    <span>09 · Julho</span>
+    <span>Nº 54</span>
+  </div>
+  <h1 class="masthead">BEL<span class="estrela">.</span></h1>
+  <div class="capa-sub">Ituporanga · Tóquio · O Mundo</div>
+
+  <div class="capa-foto">
+    <img src="img/passaporte.jpg" alt="Bel jovem, foto do passaporte">
+    <div class="selo"><div>54<small>ANOS</small></div></div>
+  </div>
+
+  <div class="chamadas">
+    <p class="chamada">A menina de Ituporanga que virou <b>mulher do mundo</b></p>
+    <p class="chamada">Da passarela em Tóquio ao melhor papel da vida: <b>mãe de meninos</b></p>
+    <p class="chamada">E no final desta edição... <b>uma surpresa</b> 🎁</p>
+  </div>
+
+  <a class="seta-baixo" href="#historia">Deslize para ler ↓</a>
+</header>
+
+<!-- ============ CARTA ============ -->
+<section class="secao" id="historia">
+  <span class="eyebrow">Carta dos editores</span>
+  <h2>Para a mulher mais <em>autêntica</em> que conhecemos</h2>
+  <div class="texto">
+    <p>Mãe, hoje é o seu dia. E a gente resolveu fazer o que você sempre fez tão bem: contar uma boa história. Só que dessa vez, a história é <strong>a sua</strong>.</p>
+    <p>Você sempre disse que é uma mulher do mundo. E é mesmo. Mas antes de rodar o mundo, essa história começa num lugar bem especial...</p>
+  </div>
+</section>
+
+<!-- ============ 1972 ITUPORANGA ============ -->
+<section class="secao">
+  <div class="cap">
+    <div>
+      <div class="num-ano">1972</div>
+      <span class="eyebrow">Capítulo 1 · Ituporanga, SC</span>
+      <h2>Nasce <em>Marisabel</em></h2>
+      <div class="texto">
+        <p>No dia 9 de julho de 1972, numa cidadezinha do interior de Santa Catarina, nasceu Marisabel Pinho. Ituporanga era pequena — mas os sonhos daquela menina, não.</p>
+        <p>Desde cedo ficou claro que ela não era como todo mundo: falava com todos, encantava todos, e tinha uma alegria que não cabia no mapa.</p>
+      </div>
+    </div>
+    <div class="cap-foto">
+      <figure class="foto-card">
+        <img src="img/antiga-2.jpg" alt="Foto antiga da Bel">
+        <figcaption>Onde tudo começou 🧅✨</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RAINHA ============ -->
+<section class="secao">
+  <div class="cap invertido">
+    <div>
+      <span class="eyebrow">Capítulo 2 · Adolescência</span>
+      <h2>A <em>rainha</em> da cidade</h2>
+      <div class="texto">
+        <p>A moda já corria nas veias. Ainda adolescente, Bel foi coroada <strong>rainha da cidade</strong> — e Ituporanga inteira descobriu o que a família já sabia: aquela menina tinha brilho próprio.</p>
+        <p>Estilo, presença e um sorriso que desarmava qualquer um. A passarela era pequena demais para ela.</p>
+      </div>
+    </div>
+    <div class="cap-foto">
+      <figure class="foto-card">
+        <img src="img/antiga-1.jpg" alt="Bel na juventude">
+        <figcaption>Nascida para brilhar 👑</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MULHER DO MUNDO / TÓQUIO ============ -->
+<section class="secao">
+  <div class="num-ano">~1989</div>
+  <span class="eyebrow">Capítulo 3 · Mulher do mundo</span>
+  <h2>De Ituporanga para <em>Tóquio</em></h2>
+  <div class="texto">
+    <p>Com apenas 17 anos, Bel fez o que pouca gente teria coragem: arrumou as malas e foi morar sozinha. Entre tantas aventuras, atravessou o planeta e foi parar no <strong>Japão</strong> — trabalhando como <strong>modelo</strong>.</p>
+    <p>Uma menina do interior catarinense desfilando do outro lado do mundo. Determinação e garra não faltavam. Nunca faltaram.</p>
+  </div>
+  <div class="duo">
+    <figure class="foto-card">
+      <img src="img/retrato-pb.jpg" alt="Retrato preto e branco da Bel modelo">
+      <figcaption>O sorriso que atravessou o mundo</figcaption>
+    </figure>
+    <figure class="foto-card">
+      <img src="img/bell-moldura.jpg" alt="Foto de portfólio — Bell">
+      <figcaption>"Bell" — direto do portfólio ✨</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ CITAÇÃO ============ -->
+<div class="faixa">
+  <blockquote>"Eu sou uma <b>mulher do mundo</b>. E nasci para ser <b>mãe de menino</b>."</blockquote>
+  <cite>— Bel, sempre</cite>
+</div>
+
+<!-- ============ MÃE ============ -->
+<section class="secao">
+  <span class="eyebrow">Capítulo 4 · O melhor papel</span>
+  <h2>Mãe do Victor, do Gabriel <em>e</em> do Henrique</h2>
+  <div class="texto">
+    <p>De todos os papéis que a vida lhe deu, esse foi o que ela nasceu para fazer. Três meninos criados com garra, alegria e aquele jeito único de se conectar com todo mundo.</p>
+    <p>Para nós, você é exemplo de <strong>determinação</strong>, inspiração de como ser <strong>mais autêntico</strong> — e a prova viva de que dá para levar a vida com leveza e um sorriso no rosto.</p>
+  </div>
+  <div class="mosaico">
+    <figure class="foto-card"><img src="img/familia-3.jpg" alt="Bel com os filhos"></figure>
+    <figure class="foto-card"><img src="img/familia-1.jpg" alt="Família reunida"></figure>
+    <figure class="foto-card"><img src="img/familia-5.jpg" alt="Bel e os meninos"></figure>
+    <figure class="foto-card"><img src="img/familia-4.jpg" alt="Bel e filho"></figure>
+    <figure class="foto-card"><img src="img/familia-9.jpg" alt="Momento em família"></figure>
+    <figure class="foto-card"><img src="img/familia-6.jpg" alt="Família"></figure>
+    <figure class="foto-card"><img src="img/familia-2.jpg" alt="Almoço em família"></figure>
+    <figure class="foto-card"><img src="img/familia-8.jpg" alt="Comemoração em família"></figure>
+    <figure class="foto-card"><img src="img/familia-7.jpg" alt="Família reunida"></figure>
+    <figure class="foto-card"><img src="img/familia-10.jpg" alt="Todos juntos"></figure>
+  </div>
+</section>
+
+<!-- ============ ALEGRIA / HOJE ============ -->
+<section class="secao">
+  <div class="cap">
+    <div>
+      <span class="eyebrow">Capítulo 5 · Hoje</span>
+      <h2>A alegria em <em>pessoa</em></h2>
+      <div class="texto">
+        <p>Brincalhona, dançante, dona de uma habilidade ímpar de fazer amigos e manter cada relacionamento vivo. Bel é aquela pessoa que chega e o ambiente muda.</p>
+        <p>E se tiver música boa tocando? Aí ninguém segura. 💃</p>
+      </div>
+    </div>
+    <div class="cap-foto">
+      <figure class="foto-card">
+        <img src="img/dancando.jpg" alt="Bel dançando na sala">
+        <figcaption>Onde tem Bel, tem festa</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÚSICA ============ -->
+<div class="musica">
+  <section class="secao">
+    <div class="disco"></div>
+    <span class="eyebrow">Trilha sonora oficial</span>
+    <h2>Aperta o play, <em>Bel!</em></h2>
+    <p class="texto" style="margin:0 auto 28px;max-width:520px">Nenhuma homenagem à Bel estaria completa sem <strong>a música dela</strong>. Aumenta o som:</p>
+    <button class="btn" id="btnMusica">▶ Tocar Coração Partido</button>
+    <div class="player-wrap" id="playerWrap">
+      <div class="player" id="player"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PRESENTE ============ -->
+<div class="presente">
+  <section class="secao">
+    <span class="eyebrow">E agora... a surpresa</span>
+    <h2>Feliz aniversário, <em>mãe!</em></h2>
+    <p class="texto" style="margin:0 auto;max-width:520px">Tem uma coisa que você sempre sonhou. E a gente achou que 54 anos era a idade perfeita para começar. 😉</p>
+
+    <button class="caixa" id="btnPresente" aria-label="Abrir presente">🎁</button>
+    <div class="dica" id="dica">Toque no presente para abrir</div>
+
+    <div class="revelacao" id="revelacao">
+      <div class="cartao">
+        <span class="tag">Matrícula confirmada ✔</span>
+        <h3>Curso de Desenho &amp; Ilustração de Moda</h3>
+        <p>Você sempre sonhou em aprender mais sobre moda e criar as suas próprias peças. Agora o kit está completo:</p>
+        <div class="trilogia">
+          <span>✔ Máquina de costura</span>
+          <span>✔ Curso de costura</span>
+          <span>🎉 Curso de moda</span>
+        </div>
+        <p>Sua vaga já está garantida na <strong>enmoda</strong> — aulas ao vivo, começando quando você quiser. A rainha da cidade agora vai desenhar as próprias coleções. 👑✂️</p>
+        <a class="btn" href="https://enmoda.com.br/curso-8-desenho-ilustracao-de-moda" target="_blank" rel="noopener">Conhecer o curso</a>
+        <p style="margin-top:22px;font-family:'Bodoni Moda',serif;font-style:italic;font-size:18px">Com todo o amor,<br><strong>Victor, Gabriel e Henrique</strong> ❤️</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>Feito com carinho para a mulher do mundo. <b>Te amamos, Bel!</b></footer>
+
+<script>
+  // ------- Música (YouTube só carrega no clique) -------
+  var btnMusica = document.getElementById('btnMusica');
+  btnMusica.addEventListener('click', function(){
+    var wrap = document.getElementById('playerWrap');
+    var player = document.getElementById('player');
+    player.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/n5wxZ_OBUXk?autoplay=1&rel=0" title="Grupo Menos é Mais — Coração Partido" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    wrap.classList.add('ativo');
+    btnMusica.style.display = 'none';
+    wrap.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  // ------- Presente + confete -------
+  var cores = ['#E0316B','#E8A83B','#F7C8D8','#1B1416','#FF7BAC'];
+  function confete(qtd){
+    for(var i=0;i<qtd;i++){
+      var c = document.createElement('div');
+      c.className = 'confete';
+      c.style.left = Math.random()*100 + 'vw';
+      c.style.background = cores[Math.floor(Math.random()*cores.length)];
+      c.style.animationDuration = (2.2 + Math.random()*2.4) + 's';
+      c.style.animationDelay = (Math.random()*0.6) + 's';
+      c.style.borderRadius = Math.random() > .5 ? '50%' : '2px';
+      document.body.appendChild(c);
+      setTimeout(function(el){ return function(){ el.remove(); }; }(c), 5600);
+    }
+  }
+  var btnPresente = document.getElementById('btnPresente');
+  btnPresente.addEventListener('click', function(){
+    btnPresente.style.display = 'none';
+    document.getElementById('dica').style.display = 'none';
+    var rev = document.getElementById('revelacao');
+    rev.classList.add('ativo');
+    confete(140);
+    rev.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+</body>
+</html>
